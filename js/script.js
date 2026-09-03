@@ -1,3 +1,4 @@
+document.documentElement.classList.add('js-ready');
 document.getElementById('year').textContent=new Date().getFullYear();
     document.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const open=item.classList.toggle('open');btn.setAttribute('aria-expanded',open);document.querySelectorAll('.faq-item').forEach(other=>{if(other!==item){other.classList.remove('open');other.querySelector('.faq-q').setAttribute('aria-expanded','false')}})}));
     let slide=0;const track=document.getElementById('result-track'),count=document.getElementById('slide-count');function go(n){slide=(n+3)%3;track.style.transform=`translateX(-${slide*100}%)`;count.textContent=`0${slide+1} / 03`}document.getElementById('next').onclick=()=>go(slide+1);document.getElementById('prev').onclick=()=>go(slide-1);
